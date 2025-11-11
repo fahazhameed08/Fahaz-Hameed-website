@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fahaz Hameed</title>
+  <style>
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Arial', sans-serif; line-height: 1.7; color: #333; scroll-behavior: smooth; background: #f5f5f5; }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(to right, #1a1a1a, #333333);
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.3rem; margin-bottom: 20px; }
+    header img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; }
+
+    /* Navigation */
+    nav { position: sticky; top: 0; background: #1a1a1a; padding: 10px 0; text-align: center; z-index: 10; }
+    nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; transition: 0.3s; }
+    nav a:hover { color: #00aaff; }
+
+    /* Sections */
+    main { max-width: 900px; margin: auto; padding: 40px 20px; }
+    section { margin-bottom: 60px; background: #fff; padding: 30px 25px; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.05); }
+    h2 { margin-bottom: 20px; border-bottom: 2px solid #0066cc; display: inline-block; padding-bottom: 5px; }
+    p { margin-bottom: 15px; }
+    .contact a { color: #0066cc; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; font-size: 0.9rem; background: #f2f2f2; }
+
+    /* Smooth Fade-in Animation */
+    section { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+    section.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      nav a { margin: 0 10px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Header / Hero -->
+  <header>
+    <img src="https://via.placeholder.com/180" alt="Fahaz Hameed Profile Photo">
+    <h1>Fahaz Hameed</h1>
+    <p>Dubai, UAE</p>
+    <p>Welcome to my personal website</p>
+  </header>
+
+  <main>
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Fahaz Hameed. I’ve always had this pull toward understanding things a little deeper than they appear on the surface. Curiosity is what drives me. It’s what nudges me to question, to learn, to create, and to put those thoughts into words that can live outside my head. Writing became the place where everything I feel and everything I notice can take shape. Sometimes it turns into a story. Sometimes an idea. Sometimes it’s just a moment I needed to express.</p>
+      <p>I don’t write to impress anyone. I write to connect. If someone reads something I wrote and thinks “I’ve felt that too,” then I’ve done what I needed to do.</p>
+      <p>I value conversations — real ones. The kind where both people walk away a little different than before. Listening closely, speaking when it matters, and trying to understand another person’s world is something I take seriously. I think empathy is underrated. We forget how much it changes the rooms we walk into.</p>
+      <p>My path has been shaped by learning. I’ve collected more than 750 certificates over the years, not to display them, but because I’m always trying to sharpen my mind. I earned a Bachelor’s degree focused on Engineering and Project Management, which gave me structure and clarity in the way I think. I added an associate degree in communication from the University of Washington, which helped me learn how to say complex things simply. Studying Business Statistics at Stanford gave me a way to see decisions through numbers. Learning about Artificial Intelligence at Lund University opened a door into how the future might think.</p>
+      <p>All of that together formed a perspective that blends logic, expression, and curiosity.</p>
+      <p>Outside of all that, I make space for the things that keep me grounded. I play — indoors, outdoors, whatever keeps the body moving and the mind alert. I watch movies, not just for entertainment, but because they remind me how many ways there are to tell a story. And I read. Books are quiet teachers.</p>
+      <p>I’m still figuring things out. I don’t think that ends. But I enjoy the process — growing, learning, connecting, and finding meaning in the small things. If our paths cross, I hope we learn something from each other.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:faazdxb118@gmail.com">faazdxb118@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/fahazhameed/" target="_blank">linkedin.com/in/fahazhameed</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Fahaz Hameed. All Rights Reserved.
+  </footer>
+
+  <!-- JavaScript for Fade-in Effect -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
